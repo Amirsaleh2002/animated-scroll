@@ -1,0 +1,53 @@
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 40px;
+  color: blue;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  width: 95%;
+  margin: 500px auto;
+}
+.box {
+  width: 200px;
+  height: 300px;
+  background-color: red;
+  animation: show linear;
+  animation-timeline: view();
+  animation-range: entry cover 40%;
+}
+
+/* @keyframes show {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+} */
+
+/* @keyframes show {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+@keyframes show {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
